@@ -1,0 +1,150 @@
+.abilities-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  color: var(--text-color);
+  min-height: 70vh; /* Keeps footer at bottom even if content is short */
+}
+
+.abilities-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.abilities-page p {
+  text-align: center;
+  color: var(--secondary-text);
+  margin-bottom: 2.5rem;
+}
+
+/* --- Modern Search Bar --- */
+.ability-search {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 3rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ability-search input {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 50px; /* Pill shape */
+  border: 2px solid transparent;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  outline: none;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.ability-search input:focus {
+  border-color: #ef5350;
+  box-shadow: 0 4px 20px rgba(239, 83, 80, 0.15);
+}
+
+.ability-search button {
+  padding: 14px 28px;
+  background-color: #ef5350;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 10px rgba(239, 83, 80, 0.3);
+}
+
+.ability-search button:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+}
+
+/* --- Result Card --- */
+.ability-card {
+  background-color: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ability-card h2 {
+  text-transform: capitalize;
+  color: #ef5350;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+  padding-bottom: 1rem;
+}
+
+/* Effect Text */
+.ability-effect {
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  background-color: var(--hover-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #ef5350;
+}
+
+.ability-effect strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* Pokemon List Chips */
+.ability-users strong {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.poke-chip {
+  background-color: var(--bg-color); /* Contrast against card */
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.poke-chip:hover {
+  background-color: #ef5350;
+  color: white;
+  transform: translateY(-2px);
+  border-color: #ef5350;
+}
+
+.error-msg {
+  text-align: center;
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}

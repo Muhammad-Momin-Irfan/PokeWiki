@@ -1,0 +1,93 @@
+.pokedex-page {
+  padding-bottom: 3rem;
+}
+
+.pokedex-header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.pokedex-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.pokedex-header p {
+  color: var(--secondary-text);
+  margin-bottom: 1.5rem;
+}
+
+/* --- Horizontal Scroller for Types --- */
+.type-filter-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto; /* Allows horizontal scrolling on phones */
+  padding: 10px 5px;
+  max-width: 100%;
+  scrollbar-width: thin; /* Firefox scrollbar styling */
+}
+
+/* Scrollbar styling for Chrome/Safari */
+.type-filter-container::-webkit-scrollbar {
+  height: 6px;
+}
+.type-filter-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+/* --- Filter Buttons --- */
+.filter-btn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap; /* Prevents text wrapping */
+  transition: transform 0.2s, opacity 0.2s;
+  opacity: 0.6; /* Dim by default */
+  color: white;
+  background-color: #777; /* Default for 'all' */
+}
+
+.filter-btn:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  opacity: 1; /* Fully bright when active */
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border: 2px solid var(--text-color);
+}
+
+/* --- Reuse the Grid from Home, but ensure it matches --- */
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+/* --- Specific Colors for Filter Buttons --- */
+.filter-btn.all { background-color: #555; }
+.filter-btn.grass { background-color: #78c850; }
+.filter-btn.fire { background-color: #f08030; }
+.filter-btn.water { background-color: #6890f0; }
+.filter-btn.bug { background-color: #a8b820; }
+.filter-btn.normal { background-color: #a8a878; }
+.filter-btn.poison { background-color: #a040a0; }
+.filter-btn.electric { background-color: #f8d030; }
+.filter-btn.ground { background-color: #e0c068; }
+.filter-btn.fairy { background-color: #ee99ac; }
+.filter-btn.fighting { background-color: #c03028; }
+.filter-btn.psychic { background-color: #f85888; }
+.filter-btn.rock { background-color: #b8a038; }
+.filter-btn.ghost { background-color: #705898; }
+.filter-btn.ice { background-color: #98d8d8; }
+.filter-btn.dragon { background-color: #7038f8; }
+.filter-btn.dark { background-color: #705848; }
+.filter-btn.steel { background-color: #b8b8d0; }
+.filter-btn.flying { background-color: #a890f0; }

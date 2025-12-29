@@ -1,0 +1,334 @@
+/* --- CONTAINER LAYOUT --- */
+.details-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Split screen layout */
+  gap: 3rem;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  margin-top: 2rem;
+  color: var(--text-color);
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- LEFT COLUMN --- */
+.details-card {
+  text-align: center;
+  border-right: 1px solid rgba(0,0,0,0.1);
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details-header h1 {
+  text-transform: capitalize;
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+  color: var(--text-color);
+}
+
+.details-id {
+  color: var(--secondary-text);
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.details-img-container {
+  background-color: var(--hover-bg); /* Subtle circle background */
+  border-radius: 50%;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.details-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(5px 10px 5px rgba(0,0,0,0.3));
+  transition: transform 0.3s;
+}
+
+.details-img-container img:hover {
+  transform: scale(1.1);
+}
+
+.btn-add-team {
+  margin-top: 2rem;
+  background-color: #ef5350;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 10px rgba(239, 83, 80, 0.3);
+  width: 100%;
+}
+
+.btn-add-team:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+}
+
+/* --- RIGHT COLUMN --- */
+.details-info h3 {
+  border-bottom: 3px solid #ef5350;
+  padding-bottom: 8px;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  display: inline-block;
+}
+
+.details-info h3:first-child {
+  margin-top: 0;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--secondary-text);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+/* Info Grid (Weight, Height, Abilities) */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  background-color: var(--hover-bg);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.info-item strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #ef5350;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-item.full-width {
+  grid-column: span 2; /* Make abilities take full width */
+}
+
+.ability-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ability-tag {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* --- FIXED STATS GRAPH --- */
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-row {
+  display: grid;
+  /* Use Grid: Label(100px) | Bar(Auto) | Value(40px) */
+  grid-template-columns: 120px 1fr 40px; 
+  align-items: center;
+  gap: 15px;
+}
+
+.stat-name {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+}
+
+.progress-bar-bg {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  background-color: #ef5350; /* Red Bar */
+  height: 100%;
+  border-radius: 5px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-value {
+  text-align: right;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* --- MODAL STYLES --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75); /* Darker backdrop */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Ensure it's on top of Navbar (z-index 1000) */
+  backdrop-filter: blur(3px); /* Blur effect */
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 450px;
+  color: var(--text-color);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-content h3 {
+  text-align: center;
+  color: #ef5350;
+  margin-bottom: 1.5rem;
+}
+
+/* Modal Inputs */
+.modal-group {
+  margin-bottom: 1.2rem;
+}
+
+.modal-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.modal-group select, 
+.item-search-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.info-text-small {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+  background-color: rgba(0,0,0,0.05);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 8px;
+  font-style: italic;
+  border-left: 3px solid #ef5350;
+}
+
+/* Item Search */
+.item-search-box {
+  display: flex;
+  gap: 5px;
+}
+
+.item-search-box button {
+  padding: 0 15px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.item-result {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+  background-color: var(--hover-bg);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ef5350;
+}
+
+.item-result img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Buttons */
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 2rem;
+}
+
+.btn-confirm, .btn-cancel {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-confirm {
+  background-color: #ef5350;
+  color: white;
+}
+.btn-confirm:hover { background-color: #d32f2f; }
+
+.btn-cancel {
+  background-color: transparent;
+  border: 1px solid #777;
+  color: var(--text-color);
+}
+.btn-cancel:hover { background-color: rgba(0,0,0,0.05); }
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 900px) {
+  .details-container {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+  .details-card {
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-right: 0;
+    padding-bottom: 2rem;
+  }
+}

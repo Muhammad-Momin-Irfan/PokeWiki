@@ -1,0 +1,106 @@
+.chart-page {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.chart-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.chart-page p {
+  color: var(--secondary-text);
+  margin-bottom: 2rem;
+}
+
+/* --- Type Selector Grid --- */
+.type-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  background: var(--hover-bg); /* Subtle background behind buttons */
+  border-radius: 20px;
+}
+
+.type-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(0.95);
+  padding: 0;
+}
+
+/* Hover State */
+.type-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-3px) scale(1);
+}
+
+/* Active Selected State */
+.type-btn.active {
+  opacity: 1;
+  transform: scale(1.15);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+  z-index: 10;
+}
+
+/* --- Analysis Result Card --- */
+.analysis-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Deeper shadow */
+  border: 1px solid rgba(0,0,0,0.05);
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.analysis-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+}
+
+.matchup-row {
+  margin-bottom: 2rem;
+}
+
+/* Labels like "Weak Against" */
+.matchup-row h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--secondary-text);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Divider Line */
+hr {
+  border: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+  margin: 2rem 0;
+}

@@ -1,0 +1,55 @@
+/* src/index.css */
+
+/* 1. DEFINE THE COLOR PALETTE (VARIABLES) */
+:root {
+  /* LIGHT MODE (Default) */
+  --bg-color: #f4f4f4;          /* Light Grey Background */
+  --nav-bg: #ef5350;            /* Pokemon Red Navbar */
+  --nav-text: #ffffff;          /* White Text on Red */
+  --card-bg: #ffffff;           /* White Cards */
+  --text-color: #333333;        /* Dark Grey Text */
+  --secondary-text: #666666;    /* Light Grey Text */
+  
+  /* Shared Colors */
+  --accent-color: #ffcb05;      /* Pokemon Yellow */
+  --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* 2. DARK MODE OVERRIDES */
+body.dark-mode {
+  --bg-color: #121212;          /* Very Dark Grey Background */
+  --nav-bg: #1e1e1e;            /* Dark Grey Navbar */
+  --nav-text: #f4f4f4;          /* White Text */
+  --card-bg: #1e1e1e;           /* Dark Grey Cards */
+  --text-color: #e0e0e0;        /* Light Grey Text */
+  --secondary-text: #aaaaaa;    /* Dim Text */
+  
+  --shadow: 0 4px 6px rgba(0,0,0,0.5); /* Darker Shadow */
+}
+
+/* 3. GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth Fade */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* This fixes the navbar overlapping content */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 80vh;
+}

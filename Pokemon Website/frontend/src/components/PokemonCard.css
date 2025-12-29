@@ -1,0 +1,106 @@
+.pokemon-card {
+  background: var(--card-bg); /* Adapts to Dark Mode */
+  color: var(--text-color);   /* Adapts to Dark Mode */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  padding-bottom: 1.5rem;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card-img-container {
+  background-color: var(--hover-bg); /* Slightly darker in light mode */
+  padding: 1.5rem;
+  border-bottom-right-radius: 50%; /* Stylistic curve */
+  border-bottom-left-radius: 50%;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s;
+}
+
+.card-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(5px 10px 4px rgba(0,0,0,0.2)); /* Makes pokemon pop */
+}
+
+.card-info {
+  padding: 0 1rem;
+}
+
+.card-id {
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.card-name {
+  text-transform: capitalize;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.card-types {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.type-badge {
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: white;
+  text-transform: capitalize;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- BUTTON STYLING --- */
+.btn-details {
+  background-color: #ef5350;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  display: inline-block;
+}
+
+.btn-details:hover {
+  background-color: #d32f2f;
+}
+
+/* --- TYPE COLORS --- */
+/* You can add more later, these are the essentials */
+.type-badge.grass { background-color: #78c850; }
+.type-badge.fire { background-color: #f08030; }
+.type-badge.water { background-color: #6890f0; }
+.type-badge.electric { background-color: #f8d030; }
+.type-badge.ice { background-color: #98d8d8; }
+.type-badge.fighting { background-color: #c03028; }
+.type-badge.poison { background-color: #a040a0; }
+.type-badge.ground { background-color: #e0c068; }
+.type-badge.flying { background-color: #a890f0; }
+.type-badge.psychic { background-color: #f85888; }
+.type-badge.bug { background-color: #a8b820; }
+.type-badge.rock { background-color: #b8a038; }
+.type-badge.ghost { background-color: #705898; }
+.type-badge.dragon { background-color: #7038f8; }
+.type-badge.dark { background-color: #705848; }
+.type-badge.steel { background-color: #b8b8d0; }
+.type-badge.fairy { background-color: #ee99ac; }
+.type-badge.normal { background-color: #a8a878; }

@@ -1,0 +1,22 @@
+export const COMMON_ITEMS = [
+  "None",
+  "Leftovers",
+  "Life Orb",
+  "Choice Scarf",
+  "Choice Band",
+  "Choice Specs",
+  "Focus Sash",
+  "Rocky Helmet",
+  "Assault Vest",
+  "Sitrus Berry",
+  "Lum Berry",
+  "Salac Berry",
+  "Heavy-Duty Boots",
+  "Weakness Policy",
+  "Black Sludge",
+  "Eviolite",
+  "Expert Belt",
+  "Kings Rock",
+  "Quick Claw",
+  "Light Clay"
+];

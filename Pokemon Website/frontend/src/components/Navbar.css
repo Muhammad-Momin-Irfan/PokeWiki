@@ -1,0 +1,169 @@
+/* --- 1. Base Layout --- */
+.navbar {
+  /* Dynamic Background: Red in Light Mode, Dark Grey in Dark Mode */
+  background-color: var(--nav-bg); 
+  color: var(--nav-text);
+  
+  height: 70px;
+  position: sticky; /* Sticks to top */
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+  
+  /* Animation for hiding/showing and theme switching */
+  transition: top 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+}
+
+/* --- 2. Scroll Behavior Classes --- */
+.nav-visible {
+  top: 0;
+}
+
+.nav-hidden {
+  top: -70px; /* Moves it exactly out of view */
+}
+
+/* --- 3. Logo Styling --- */
+.navbar-logo a {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent-color); /* Pokemon Yellow */
+  text-shadow: 2px 2px rgba(0,0,0,0.2);
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+/* --- 4. Menu & Links --- */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links {
+  color: var(--nav-text);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.nav-links:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-links-btn {
+  background-color: var(--accent-color);
+  color: #333;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: transform 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links-btn:hover {
+  transform: translateY(-2px);
+  background-color: #e6b800;
+}
+
+/* Specific styling for the Logout Button */
+.logout-btn {
+  background-color: #333;
+  color: white; /* Ensures text is visible */
+}
+
+.logout-btn:hover {
+  background-color: #000;
+}
+
+/* Styling for the "Hi, Ash" text */
+.user-greeting {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: var(--nav-text);
+  font-size: 0.95rem;
+}
+
+/* --- 5. Theme Toggle Icon --- */
+.theme-toggle {
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  color: var(--nav-text);
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+/* --- 6. Mobile Responsiveness --- */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--nav-text);
+}
+
+@media screen and (max-width: 960px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh; /* Takes up most of the screen */
+    position: absolute;
+    top: 70px; /* Below the navbar */
+    left: -100%; /* Hidden to the left by default */
+    opacity: 0;
+    transition: all 0.5s ease;
+    background-color: var(--nav-bg); /* Matches navbar color */
+    padding-top: 2rem;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+
+  /* When the 'active' class is added by React, slide it in */
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    z-index: 999;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: table;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  /* Show the Hamburger Icon */
+  .menu-icon {
+    display: block;
+  }
+}
