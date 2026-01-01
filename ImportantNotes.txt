@@ -1,0 +1,3 @@
+This fodler only contains the files with code (both frond and back end). All the Node Modules, enf file etc need to be installed for it to work.
+
+Screen Shots of the woeking website are in report.
